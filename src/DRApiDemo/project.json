@@ -1,0 +1,31 @@
+﻿{
+  "authors": [ "Stefan" ],
+  "commands": {
+    "DRApiDemo": "DRApiDemo"
+  },
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+  "dependencies": {
+    "DRApi": "1.0.0-*",
+    "Newtonsoft.Json": "8.0.1-beta3",
+    "System.Net.Http": "4.0.1-beta-23516"
+  },
+  "description": "DRApiDemo Console Application",
+  "frameworks": {
+    "dnx451": { },
+    "dnxcore50": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Console": "4.0.0-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+      }
+    }
+  },
+  "licenseUrl": "",
+  "projectUrl": "",
+  "tags": [ "" ],
+  "version": "1.0.0-*"
+}
