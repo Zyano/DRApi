@@ -30,9 +30,9 @@ namespace DRApiDemo {
 
             foreach(var el in list.Items) {
                 Console.WriteLine(el.SeriesTitle + " - " + el.Title);
-                string uri = el.PrimaryAsset.Uri;
+                Uri uri = el.PrimaryAsset.Uri;
                 Console.WriteLine(uri);
-                var split = uri.Split('/');
+                var split = uri.ToString().Split('/');
                 string barId = split[split.Length - 1];
                 BarResponse br = await dr.BarAsync(barId);
                 Console.WriteLine(br.Links.First(l => l.Target == "HLS").Uri);

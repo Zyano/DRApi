@@ -9,7 +9,7 @@ using DRApi.List;
 using DRApi.Manifest;
 
 namespace DRApi.Requester {
-    internal interface IDrRequester {
+    public interface IDrRequester {
         Task<BarResponse> BarAsync(string id);
         Task<BarResponse> BarImageForBundleAsync(string id, string forcechanneloverrideid);
         Task<BarResponse> BarImageForProgramcardAsync(string id, string forcechanneloverrideid);

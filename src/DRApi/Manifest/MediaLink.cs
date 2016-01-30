@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace DRApi.Manifest {
+﻿namespace DRApi.Manifest {
     public class MediaLink {
         // TODO: Change to URI
         public string Uri { get; set; }

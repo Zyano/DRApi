@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using DrApi.Converters;
+using Newtonsoft.Json;
 
 namespace DRApi.Programcard {
     public class Programcard {
         public string Description { get; set; }
         public string ProductionNumber { get; set; }
-        // TODO: Change to URI
-        public string SeriesSiteUrl { get; set; }
+        [JsonConverter(typeof(UriConverter))]
+        public Uri SeriesSiteUrl { get; set; }
         public Broadcast PrimaryBroadcast { get; set; }
         public ICollection<Chapter> Chapters { get; set; }
 
@@ -18,6 +17,9 @@ namespace DRApi.Programcard {
         public string Type { get; set; }
         public string SeriesTitle { get; set; }
         public string SeriesSlug { get; set; }
+        /// <summary>
+        /// Can be used to look up a list of episodes related to the budle/series urn.
+        /// </summary>
         public string SeriesUrn { get; set; }
         public string IsNewSeries { get; set; }
         public string SeriesHostName { get; set; }
@@ -36,12 +38,12 @@ namespace DRApi.Programcard {
         public string RectificationLink { get; set; }
         public string RectificationLinkText { get; set; }
         public Asset PrimaryAsset { get; set; }
-        [Newtonsoft.Json.JsonConverterAttribute(typeof(DateTimeConverter))]
+        [JsonConverter(typeof(DateTimeConverter))]
         public DateTime PrimaryBroadcastDay { get; set; }
         public string Slug { get; set; }
         public string Urn { get; set; }
-        // TODO: Change to URI
-        public string PrimaryImageUri { get; set; }
+        [JsonConverter(typeof(UriConverter))]
+        public Uri PrimaryImageUri { get; set; }
         public string Title { get; set; }
         public string SubTitle { get; set; }
     }
