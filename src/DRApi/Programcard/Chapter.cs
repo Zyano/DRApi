@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace DRApi.Programcard {
+﻿namespace DRApi.Programcard {
     public class Chapter {
         public string Title { get; set; }
         public string Description { get; set; }

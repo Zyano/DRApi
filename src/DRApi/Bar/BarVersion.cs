@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace DRApi.Bar {
+﻿namespace DRApi.Bar {
     public class BarVersion {
         public int Major { get; set; }
         public int Minor { get; set; }
@@ -11,6 +6,5 @@ namespace DRApi.Bar {
         public int Revision { get; set; }
         public int MajorRevision { get; set; }
         public int MinorRevision { get; set; }
-
     }
 }

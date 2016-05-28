@@ -39,7 +39,6 @@ namespace DRApiDemo {
             string barId=split[split.Length-1];
             BarResponse br=await dr.BarAsync(barId);
             Console.WriteLine(br.Links.First(l => l.Target == "HLS").Uri);
-
             Console.WriteLine(pcard.Hostname);
           }
         }
