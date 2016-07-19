@@ -102,10 +102,15 @@ namespace DRApi.Requester {
         /// <param name="offset">Page offset. (Optional)</param>
         /// <param name="excludedId">An id to exclude from the list. This can either be an urn or a slug (Optional)</param>
         /// <returns cref="ListResponse"></returns>
+        /// For some reason this currently doesn't support any optional parameteres. BUG on DR.dk/muTest API.
         public async Task<ListResponse> ListAsync(string id, int limit = 5, int offset = 0, string excludedId = "") {
-            string url=$"http://www.dr.dk/mu-online/api/1.3/list/{id}&limit={limit}&offset={offset}&excludeid={excludedId}";
+            string url=$"http://www.dr.dk/mu-online/api/1.3/list/{id}?limit={limit}&offset={offset}&excludeid={excludedId}";
+            //string url = $"http://www.dr.dk/mu-online/api/1.3/list/{id}";
             DownloadClient<ListResponse> dc = new DownloadClient<ListResponse>();
-            return await dc.DownloadAndConvert(url);
+            var res = await dc.DownloadAndConvert(url);
+            res.Offset = offset;
+            res.Limit = limit;
+            return res;
         }
         // TODO: channel is channelSlug (build enum with these for easier use in the future
         /// <summary>

@@ -7,5 +7,8 @@ namespace DRApi.List {
         public ICollection<Programcard.Programcard> Items { get; set; }
         public Paging Paging { get; set; }
         public int TotalSize { get; set; }
+        public int Offset { get; set; }
+        public int Limit { get; set; }
+        public bool HasMore => TotalSize-Offset-Limit > 0;
     }
 }
